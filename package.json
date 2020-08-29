@@ -1,0 +1,75 @@
+{
+  "name": "dot-deployer",
+  "version": "v3.1.0",
+  "author": "WeWork Design Technology",
+  "description": "An open-source solution for deploying GitHub releases",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build --win",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "axios": "^0.18.0",
+    "buefy": "^0.7.1",
+    "bulma": "^0.7.2",
+    "child_process": "^1.0.2",
+    "decompress-zip": "^0.2.2",
+    "electron-updater": "4.0.6",
+    "firebase": "^5.7.0",
+    "fs-extra": "^7.0.1",
+    "googleapis": "^36.0.0",
+    "http": "^0.0.0",
+    "js-base64": "^2.5.1",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "opn": "^5.4.0",
+    "ps-list": "^6.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "rollbar": "^2.5.1",
+    "server-destroy": "^1.0.1",
+    "url": "^0.11.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-plugin-unit-mocha": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.1.2",
+    "electron": "3.0.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "lint-staged": "^7.2.2",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-electron-builder": "^1.0.0-rc.9",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "main": "background.js"
+}
